@@ -1,8 +1,7 @@
-# TeleSync
+# TeleSync-nochunk
 
-An application to store your local files on Telegram.
-
-> 📸 Watch the video on [YouTube](https://youtu.be/vCAcc_q-NNw)
+An application to store your selected files on Telegram. Upload Only and nothing else
+a files must ≤ 2GB
 
 ## Features
 
@@ -69,9 +68,7 @@ chmod +x run.sh
 | Command                 | Description                            |
 | ----------------------- | -------------------------------------- |
 | `upload [FILE_QUERY]`   | Upload a file to Telegram              |
-| `download [FILE_QUERY]` | Download a file from Telegram          |
-| `remove [FILE_QUERY]`   | Delete a file from Telegram            |
-| `list`                  | List all files in the Telegram Channel |
+
 
 `FILE_QUERY` can be the file name, file path, the ID of the file, or a part of the file name.
 
