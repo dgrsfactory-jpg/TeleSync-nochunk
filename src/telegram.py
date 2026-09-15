@@ -7,6 +7,7 @@ from telethon import TelegramClient
 
 VERBOSE = get_verbose()
 PHONE = get_phone()
+CHANNEL = get_channel()
 
 if VERBOSE:
     import logging
@@ -24,6 +25,7 @@ class Telegram:
         self._client = TelegramClient(session=session_path, api_id=self._api_id, api_hash=self._api_hash)
         if VERBOSE:
             print(colored(f"[INFO] Connecting to Telegram via \"{PHONE}\"", "magenta"))
+            print(colored(f"[INFO] Uploading to channel \"{CHANNEL}\"", "magenta"))
         self._client.start(phone=PHONE)
 
     @property
@@ -31,7 +33,7 @@ class Telegram:
         return self._client
 
     def upload_file(self, current_dir: str, file_path: str, file_name: str):
-        print(colored(f"[*] Uploading {file_name} to Telegram...", "magenta"))
+        print(colored(f"[*] Uploading {file_name} to {CHANNEL}...", "magenta"))
         absolute_path = os.path.abspath(os.path.join(current_dir, file_path))
         file_size = os.path.getsize(absolute_path)
 
@@ -50,12 +52,12 @@ class Telegram:
                 progress.update(sent - last_sent[0])
                 last_sent[0] = sent
 
-            self.client.send_file("me", absolute_path, progress_callback=_progress)
+            self.client.send_file(CHANNEL, absolute_path, progress_callback=_progress)
 
-        print(colored(f"[+] Uploaded \"{file_name}\" to Telegram.", "green"))
+        print(colored(f"[+] Uploaded \"{file_name}\" to {CHANNEL}.", "green"))
 
     def upload_directory(self, current_dir: str, dir_path: str, dir_name: str):
-        print(colored(f"[*] Uploading directory \"{dir_name}\" to Telegram...", "magenta"))
+        print(colored(f"[*] Uploading directory \"{dir_name}\" to {CHANNEL}...", "magenta"))
         absolute_path = os.path.abspath(os.path.join(current_dir, dir_path))
 
         all_files = [
@@ -86,6 +88,6 @@ class Telegram:
                         _p.update(sent - _l[0])
                         _l[0] = sent
 
-                    client.send_file("me", file_abs_path, progress_callback=_progress)
+                    client.send_file(CHANNEL, file_abs_path, progress_callback=_progress)
 
-        print(colored(f"\n[+] Uploaded \"{dir_name}\" to Telegram.", "green"))
+        print(colored(f"\n[+] Uploaded \"{dir_name}\" to {CHANNEL}.", "green"))
