@@ -24,7 +24,7 @@ done
 echo "[*] Found $total file(s) in $PHOTO_DIR."
 echo ""
 
-for file in "$PHOTO_DIR"/*; do
+for file in "$PHOTO_DIR"/*.png; do
     [ -f "$file" ] || continue
 
     filename=$(basename "$file")
