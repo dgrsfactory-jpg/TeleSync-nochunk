@@ -2,5 +2,6 @@
   "telegram_api_id": "",
   "telegram_api_hash": "",
   "phone_number": "",
+  "channel": "",
   "verbose": false
 }
