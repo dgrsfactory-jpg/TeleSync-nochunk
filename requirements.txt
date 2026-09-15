@@ -2,3 +2,4 @@ wheel
 setuptools
 telethon
 termcolor
+tqdm
