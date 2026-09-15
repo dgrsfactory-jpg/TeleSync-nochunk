@@ -18,8 +18,8 @@ You can create a new App [here](https://my.telegram.org/apps).
 ## Installation
 
 ```bash
-git clone https://github.com/FujiwaraChoki/TeleSync.git
-cd TeleSync
+git clone https://github.com/dgrsfactory-jpg/TeleSync-nochunk.git
+cd TeleSync-nochunk
 ```
 
 > ⚠️: In order to install the dependencies flawlessly, please follow the instructions step-by-step.
