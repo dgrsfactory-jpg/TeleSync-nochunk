@@ -59,7 +59,7 @@ chmod +x run.sh
 | `api_id`       | Your Telegram API ID.                                                       |
 | `api_hash`     | Your Telegram API Hash.                                                     |
 | `phone_number` | Your phone number, which you use for Telegram.                              |
-| `channel`      | "me" — your own Saved Messages or "@channelname" — a public channel username|
+| `channel`      | "me" your own Saved Messages or "@channelname" a public channel username    |
 | `verbose`      | If `true`, the application will print more information. (Default: `false`)  |
 
 
