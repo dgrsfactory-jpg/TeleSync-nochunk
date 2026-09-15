@@ -7,7 +7,7 @@ a files must ≤ 2GB
 
 - Infinite storage (No limit)
 - Easy to use
-- Fast and secure
+- Fast and secure (encrypt ur own files manually or using your own script)
 - Free & Open Source
 
 ## Prerequisites
