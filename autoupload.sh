@@ -15,7 +15,8 @@ skipped=0
 uploaded=0
 failed=0
 
-for file in "$PHOTO_DIR"/*; do
+# Only Select .png files
+for file in "$PHOTO_DIR"/*.png; do
     [ -f "$file" ] || continue
     total=$((total + 1))
 done
